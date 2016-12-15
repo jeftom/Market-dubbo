@@ -1,0 +1,2 @@
+threadlocal=com.alibaba.dubbo.cache.support.threadlocal.ThreadLocalCacheFactory
+lru=com.alibaba.dubbo.cache.support.lru.LruCacheFactory
