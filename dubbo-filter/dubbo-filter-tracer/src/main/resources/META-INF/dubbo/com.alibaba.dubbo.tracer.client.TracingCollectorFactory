@@ -1,0 +1,2 @@
+default=com.alibaba.dubbo.tracer.client.support.DefaultTracingCollectorFactory
+rocketmq=com.alibaba.dubbo.tracer.client.support.rocketmq.RocketMqTracingCollectorFactory

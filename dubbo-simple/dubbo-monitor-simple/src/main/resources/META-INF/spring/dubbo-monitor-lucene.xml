@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	
+	<bean class="com.alibaba.dubbo.monitor.simple.DubboKeeperMonitorService" autowire="byType" id="dubboKeeperMonitorService">
+    </bean>
+
+    <dubbo:service interface="com.alibaba.dubbo.monitor.MonitorService" ref="dubboKeeperMonitorService" id="exportMonitorService">
+        <dubbo:parameter key="interval" value="${monitor.collect.interval}"/>
+    </dubbo:service>
+    
+    <dubbo:service interface="com.alibaba.dubbo.monitor.simple.storage.StatisticsStorage" ref="luceneStatisticsStorage"/>
+    <bean class="com.alibaba.dubbo.monitor.simple.storage.lucene.LuceneStatisticsStorage" id="luceneStatisticsStorage"/>
+
+</beans>

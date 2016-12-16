@@ -1,0 +1,1 @@
+default=com.alibaba.dubbo.tracer.client.support.DefaultSyncTransfer
